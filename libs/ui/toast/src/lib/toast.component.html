@@ -1,0 +1,16 @@
+<div
+  type="alert"
+  class="notification"
+  [ngClass]="{
+    'notification--success': this.notification?.config?.type === 'success',
+    'notification--error': this.notification?.config?.type === 'error',
+    'notification--warning': this.notification?.config?.type === 'warning'
+  }">
+  {{ notification.content }}
+  <button type="button" class="close" (click)="close()">✖</button>
+  <div *ngIf="notification?.config?.autoClose" class="progress-bar">
+    <div class="progress-bar__fill" [style.width]="loading$ | async"></div>
+  </div>
+</div>
+
+

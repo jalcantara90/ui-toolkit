@@ -1,0 +1,11 @@
+{
+  "name": "@sysmian/toast",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/common": "x.x.x",
+    "@angular/core": "x.x.x"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

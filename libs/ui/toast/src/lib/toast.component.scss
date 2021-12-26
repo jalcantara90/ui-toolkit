@@ -1,0 +1,71 @@
+$notification-text-color: var(--notification-text-color, #FFFFFF);
+$notification-success-bg: var(--notification-success-bg, #23C552);
+$notification-warning-bg: var(--notification-warning-bg, #F84F31);
+$notification-error-bg: var(--notification-error-bg, #D00104);
+$notification-progress-bar-bg: var(--notification-progress-bar-bg, #ffffff30);
+$notification-shadow: var(--notification-shadow, #5d5d5d);
+$notification-progress-bar-filled-bg: var(--notification-progress-bar-filled-bg, #ffffffa6);
+$notification-font-family: var(--notification-font-family, sans serif);
+$notification-font-weight: var(--notification-font-weight, bold);
+$notification-border-radius: var(--notification-border-radius, .25em);
+$notification-margin: var(--notification-margin, .5em .25em);
+$notification-padding: var(--notification-padding, .75em 3em 1em 1em);
+$notification-max-width: var(--notification-max-width, 25em);
+
+.notification {
+  position: relative;
+  padding: $notification-padding;
+  margin: $notification-margin;
+  border-radius: $notification-border-radius;
+  color: $notification-text-color;
+  font-weight: $notification-font-weight;
+  pointer-events: all;
+  transform-origin: top right;
+  box-shadow: 4px 4px 10px $notification-shadow;
+  transition: 300ms ease-in-out;
+  max-width: $notification-max-width;
+  font-family: $notification-font-family;
+
+  &--success {
+    background-color: $notification-success-bg;
+  }
+
+  &--warning {
+    background-color: $notification-warning-bg;
+  }
+
+  &--error {
+    background-color: $notification-error-bg;
+  }
+}
+
+.progress-bar {
+  position: absolute;
+  left: 0;
+  height: .5rem;
+  right: 0;
+  bottom: 0;
+  background: $notification-progress-bar-bg;
+
+  &__fill {
+    background: $notification-progress-bar-filled-bg;
+    height: 100%;
+  }
+}
+
+.close {
+  position: absolute;
+  padding: 0 2px;
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  color: $notification-text-color;
+  cursor: pointer;
+  right: 10px;
+  top: 1em;
+  outline: none;
+
+  &:focus-visible {
+    box-shadow: 0 0 2px $notification-shadow;
+  }
+}
